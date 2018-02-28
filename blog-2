@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>Cameron Bridge - Blog</title>
+	<meta name="description" content="A documentation of how i made my portfolio website. As well as My thoughts digital industry.">
+	<meta name="keywords" content="blog, digital industry, optomisation, portfolio, student, SEO, html, css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	
+	<p><a href="#main-content" class="sr-only">skip to content</a></p> 
+	
+	<!--- skip links for people using screen readers-->
+	
+	<header role="banner">
+		<div class="wrapper">
+			<a class="logo-link" href="index.html" title="Camerons homepage"><h1 class="logo">Cameron Bridge.</h1></a>
+				<nav class="page-nav" role="navigation">
+		   			<h2>Main Navigation</h2>
+						<ul>
+							<li><a href="index.html" title="Cameron's homepage" >Home</a></li>
+							<li><a href="blog.html" title="Cameron's blog page"  class="current">Blog</a></li>
+							<li><a href="contact.html" title="Cameron's contact page" >contact</a></li>
+						</ul>
+				</nav>
+		</div>
+  	</header>
+	
+	<!--- Header ends here-->
+
+	<section class="banner">
+		<div class="layer">
+		<div class="page-heading">
+			<h2>Aspiring Web Developer</h2>
+		</div>
+	</div>
+	</section>
+
+<!--- banner ends here-->
+	<main id="main-content" role="main">
+	
+	<section class="blog-posts">
+		<div class="wrapper">
+			<h3>About the industry</h3>
+			<p></p>
+		</div>
+	</section
+	
+	</main>
+	<!--- blog posts end here-->
+	
+	<footer role="contentinfo">
+	 <div class="social">
+		<ul>
+			<li>
+				<a href="https://www.linkedin.com/in/cameron-bridge-811ab6152/" title="My LinkedIn profile"><img src="images/linkedin.svg" width="28" height="28" alt="LinkedIn icon"></a>
+			</li>
+
+			<li>
+				<a href="https://twitter.com/CameronBridge_1" title="My twitter page"><img src="images/twitter.svg" width="28" height="28" alt="twitter icon"></a>
+			</li>
+		</ul>
+
+		   <p>Cameron Bridge - &copy;2017</p>
+	</div>	   
+</footer>
+</body>
+</html>
