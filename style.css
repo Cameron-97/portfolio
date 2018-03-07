@@ -1,5 +1,5 @@
 /* hidden skip links. still visable to screen readers - https://webaim.org/techniques/css/invisiblecontent/ */
-.skip-content {
+#main-content {
 	position:absolute;
 	left:-10000px;
 	top:auto;
