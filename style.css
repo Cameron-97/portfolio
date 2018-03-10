@@ -597,3 +597,44 @@ footer p {
 	
 }
 
+/* tablet */
+
+@media screen and (max-width: 980px) and (min-width: 761px) {
+	
+	/* past work */
+	
+	.showcase {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	/* banner */
+	
+	.banner {
+		height: 450px;
+	}
+	
+	/* blog page */
+	
+	.blogs ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.expanded-blogs .wrapper {
+		max-width: 75%; 
+		//box-shadow: none;
+	}
+	
+	/* contact page */
+	
+	.contact-me {
+		max-width: 75%;
+	}
+	
+	.contact-me input {
+		padding: 15px;
+	}
+	
+}
+
