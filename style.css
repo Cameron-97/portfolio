@@ -562,4 +562,38 @@ footer p {
 		max-width: 75%;
 		margin: 0 auto;
 	}
+	
+	/* past work */
+	
+	.showcase {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(300px, auto);
+	grid-gap: 10px;
+	}
+	
+	/* blog page */
+	
+	.blogs ul {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(150px, auto);
+}
+	
+	.expanded-blogs .wrapper {
+	max-width: 95%; 
+		box-shadow: none;
+}
+	
+	/* contact page */
+	
+	.contact-me {
+		max-width: 100%;
+	}
+	
+	.contact-me input {
+		padding: 10px;
+	}
+	
+}
 
