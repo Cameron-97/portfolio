@@ -502,3 +502,64 @@ footer p {
 	display: block;
 }
 
+/* mobiles */
+
+@media screen and (max-width: 760px) {
+	
+	/* header and banner */
+	
+	header .wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+	grid-template-areas: 
+		"header header header"
+		"nav nav nav";
+}
+	
+	header .wrapper a {
+		grid-area: header;
+		justify-self: center;
+	}
+	
+	header .wrapper nav {
+		grid-area: nav;
+		justify-self: center;
+		grid-gap: 10px;
+		display: grid;
+		margin-top: 0;
+	}
+	
+	nav ul li {
+		grid-column-gap: 10px;
+		display: grid;
+		justify-self: center;
+	}
+	
+	.banner {
+		height: 350px;
+	}
+	
+	/* about me */
+	
+	.content {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: minmax(50px, auto);
+	grid-gap: 10px;
+	grid-template-areas: 
+		"who who"
+		"para para"
+		"portrait portrait"
+		"cv cv"
+}
+	
+	.button {
+		margin-top: 20px;
+	}
+	
+	.content img {
+		max-width: 75%;
+		margin: 0 auto;
+	}
+
