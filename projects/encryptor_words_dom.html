@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Encryptor v1</title> 
+</head>
+<body>
+
+<h1>Welcome to the encryptor</h1>
+<p id="description">In this basic version the encryptor accepts and displays content from a dialogue box. A single alphabetical character can be encrypted.</p>
+
+<p id="instruction">Type in a message to be encrypted here.</p>
+
+<form action="encryptor_words_dom.html">
+
+  
+    <select id="numbers">
+
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+			<option>24</option>
+			<option>25</option>
+			<option>26</option>
+    </select>
+
+    </form>
+
+
+<div id="message1">
+
+<textarea id="userText" cols="50" rows="7">encrypt</textarea> <br>
+<input name="btn" value="encrypt" onclick="encrypt()" type="button">
+
+
+<p id="encryptedPhrase"></p>
+
+
+</div>
+
+<div id="message2">
+
+<textarea id="encryptionText" cols="50" rows="7">decrypt</textarea> <br>
+<input name="btn" value="decrypt" onclick="decrypt()" type="button">
+
+<p id="decryptedPhrase"></p>
+
+</div>
+<script>
+
+function encrypt() {
+var userText = document.getElementById("userText").value; //Gets the letter the user input
+var alphabet = "abcdefghijklmnopqrstuvwxyz"; //A variable containing the alphabet
+var key = 3; // the amount the letter will be shifted.
+var encryptText = ""; //This holds the result and is an empty string for now
+
+for(i=0; i < userText.length; i++) { //a loop for each character in the alphabet
+var nextLetter = userText.charAt(i); //Gets the next letter
+var input = alphabet.indexOf(nextLetter); //finds the index of the letter
+
+
+if (input === -1) { //if you can't find the character in the alphabet
+encryptText += userText.charAt(i); //adds the not found character to the encryptText string
+}
+
+else if (input > -1 && input < 23) //if the character is a charcter in the alphabet variable but less than 23 characters
+{ 
+var input2 = input + key; //adds the encrypted index for that character
+encryptText += alphabet[input2] //adds the encrypted character to encryptText
+ }
+
+else { var input2 = (input + key) - 26; //if the character is greater than 23 characters the character will -26 
+encryptText += alphabet[input2]; //adds the encrypted character to encryptText
+ } 
+ }
+ var encryptResults = document.getElementById("encryptedPhrase"); // grabs the id where the encrypted result will go
+ encryptResults.innerHTML = "The message has been encrytped as: <br> <br> " + encryptText; //changing the html so that it adds the encrypyText variable we created
+ 
+ if(!isNaN(userText)) { //makes sure you can't use numbers
+  alert("Number aren't allowed"); //alert box to warn the user
+  encryptResults.innerHTML = ""; //if number is input a blank output will run 
+ }
+}
+
+
+function decrypt() {
+
+var encryptionText = document.getElementById("encryptionText").value;
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var key = 3;
+var decryptText = "";
+
+for(i=0; i < encryptionText.length; i++) {
+var nextLetter = encryptionText.charAt(i);
+var input = alphabet.indexOf(nextLetter);
+var input2 = input - key; //decrytion is the same process put the key goes backwards
+
+if (input === -1) {
+decryptText += encryptionText.charAt(i);;
+}
+
+else if (input2 <= -1) 
+{ 
+input2 += alphabet.length;
+decryptText += alphabet[input2]
+ }
+
+else { 
+decryptText += alphabet[input2];
+ } 
+ }
+ var encryptResults = document.getElementById("decryptedPhrase");
+ encryptResults.innerHTML = "The message has been encrytped as: <br> <br> " + decryptText;
+ 
+ if(!isNaN(encryptionText)) {
+  alert("Number aren't allowed");
+  encryptResults.innerHTML = "";
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

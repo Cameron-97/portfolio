@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Calculator</title>
+<link rel="stylesheet" type="text/css" href="style-2.css">
+</head>
+<body>
+<h1>Javascript calculator</h1>
+<form id="main">
+
+<input id="result">
+<br>
+<input type="button" class="button" id="1" value="1">
+<input type="button" class="button" id="2" value="2">
+<input type="button" class="button" id="3" value="3"> <br>
+<input type="button" class="button" id="4" value="4">
+<input type="button" class="button" id="5" value="5">
+<input type="button" class="button" id="6" value="6"> <br>
+<input type="button" class="button" id="7" value="7">
+<input type="button" class="button" id="8" value="8">
+<input type="button" class="button" id="9" value="9"> <br>
+
+<input type="button" class="button" id="0" value="0">
+
+<input type="button" class="button" id="plus" value="+">
+<input type="button" class="button" id="minus" value="-">
+<input type="button" class="button" id="times" value="*">
+<input type="button" class="button" id="div" value="/"> 
+
+<input type="button" class="button" id="clear" name="clear" value="C">
+<input type="button" class="button" id="calc" name="calc" value="=">
+</div>
+
+<script>
+
+var result = document.getElementById("result");
+
+for (i=0; i<10; i++) {
+document.getElementById(i).addEventListener("click", function() {
+result.value += this.value;
+}
+);
+}
+
+document.getElementById("plus").addEventListener("click", function() {
+result.value += this.value
+
+}
+);
+
+document.getElementById("minus").addEventListener("click", function() {
+result.value += this.value
+}
+);
+
+document.getElementById("times").addEventListener("click", function() {
+result.value += this.value
+
+}
+);
+
+document.getElementById("div").addEventListener("click", function() {
+result.value += this.value
+
+}
+);
+
+document.getElementById("calc").addEventListener("click", function() {
+var evalu = eval(result.value)
+result.value = evalu
+
+} 
+);
+
+document.getElementById("clear").addEventListener("click", function() {
+
+result.value = ""
+
+}
+);
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

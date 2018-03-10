@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Shirt Company</title>
+<link href="http://55060509.webdevmmu.uk/style-guide/global.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+<h1>Welcome to The Shirt Company (Est 2016)</h1>
+    <p>
+    	Please enter your name and place your order.
+	</p>  
+
+<form id="orderform">
+<h2>Name</h2>
+<p>First name:   <input type="text" id="first-name" placeholder="Enter your first name…"> </p> <br> 
+<p>Family name:  <input type="text" id="family-name" placeholder="Enter your family name…"> </p>  <br> 
+
+<h2>Cotton shirt</h2>
+<p>Price: £20 per shirt</p>
+<p>Quantity desired:  <input type="text" id="shirt-quantity" placeholder="Enter a quantity…"> </p> <br>
+
+<h2>Cotton tie</h2> 
+<p>Price: £12 per tie</p>
+<p>Quantity desired:  <input type="text" id="tie-quantity" placeholder="Enter a quantity…"> </p> <br>
+
+<h2>Select customer status</h2>
+<p><select id="status">
+		    	<option value=""> ... </option>
+			<option value="non-reg">Non-registered customer </option>
+		    	<option value="reg">Registered customer </option>
+		    	<option value="trade">Trade customer </option>	
+	    	</select></p>
+			
+<h2>Select delivery</h2>
+                <input type="radio" value="opt1" name="radioChoice" checked> <p>7-Day (£2 per Order)</p> 
+                <input type="radio" value="opt2" name="radioChoice" > <p>3-Day (£3 per Order)</p>
+                <input type="radio" value="opt3" name="radioChoice" > <p>Next Day (£5 per Order)</p>			
+
+			
+<h2>Check order</h2>
+
+<p>Please click here:  <input type="button" id="button" value="Check your order"> </p>
+
+
+
+</form>	
+
+<div id="output">
+
+<p id="greeting"></p>
+
+<p id="results1"></p>
+
+<p id="results2"></p>
+
+<p id="customerStatus"></p>
+
+<p id="deliveryCost"></p>
+
+<p id="totalcost"></p>
+
+<p id="checkout"></p>
+
+</div>
+
+</div>
+<script type="text/javascript">
+	
+var button = document.getElementById("button"); //grabs the button with the id
+button.addEventListener("click", estimateOrder); // when the button is clicked a function is run
+
+function estimateOrder() {
+var firstName = document.getElementById("first-name"); //grabs the ids with the input fields
+var familyName = document.getElementById("family-name");
+var shirtQuantity = document.getElementById("shirt-quantity");
+var tieQuantity = document.getElementById("tie-quantity");
+var subTotal1 = shirtQuantity.value*20; //calculates the total price of the shirts
+var subTotal2 = tieQuantity.value*12; //calculates the total price of the ties
+var total = subTotal1 + subTotal2; //calculates the total price of the shirts and ties
+
+var nonRegCustomer = 0; //discount amounts of the customer types
+var regCustomer = 0.10;
+var tradeCustomer = 0.20;
+
+if(firstName.value.length === 0){
+alert("please enter a first name"); //alert if the first name field is empty
+}
+
+else if(familyName.value.length === 0){
+alert("please enter a family name"); //alert if the family name field is empty
+}
+
+else if(isNaN(shirtQuantity.value)) {
+alert("Please enter a number"); //alert if quantity of shirts is empty
+}
+
+else if(isNaN(tieQuantity.value)) {
+alert("Please enter a number"); //alert if quantity of ties is empty
+}
+
+else {
+
+
+
+
+
+greeting.innerHTML = "Hello " + firstName.value + " " + familyName.value + "! You have selected: <br>"; //changing the html so it displays the names of the user
+
+results1.innerHTML = "* " + shirtQuantity.value + " shirts @ £20 each. subtotal: £" + subTotal1 + "<br>"; //changing the html so it displays the amount and price of the items
+
+results2.innerHTML = "* " + tieQuantity.value + " ties @ £12 each. subtotal: £" + subTotal2 + "<br>";
+
+totalcost.innerHTML = "<strong>The total cost is:</strong> £" + total; //calculates total cost 
+
+var radioChoice = document.getElementById('orderform').radioChoice; //grabs the order form id from the html
+                var radio = ""; //empty string where th value will go
+                var deliveryAmount; //declaring the delivery amount variable
+                
+                
+                for(var i=0; i < radioChoice.length; i++){
+                    if (radioChoice[i].checked){
+                        radioValue = radioChoice[i].value; //repeats for every radio button
+                        break;
+                    }
+                }
+                
+                if (radioValue === 'opt1'){
+                    deliveryAmount = 2; //if the button with that id is chosen 2 will be added to the delivery amount
+                    }
+                    if (radioValue === 'opt2'){
+                    deliveryAmount = 3;
+                
+                    }
+                    if (radioValue === 'opt3'){
+                    deliveryAmount = 5;
+                    }
+
+
+var dropDown = document.getElementById("status").value; //grabs the dropdown for the customer status
+if (dropDown === 'non-reg') { //if they chose non registerd customer
+var discount = total*nonRegCustomer; //calculates the discount
+var customerStatus = document.getElementById("customerStatus").innerHTML = ""; //grabs the id where the discount info will be displayed
+var discountTotal = document.getElementById("totalcost").innerHTML = "The total cost is: £" + (total - discount + deliveryAmount).toFixed(2); //grabs the total cost id of the order and adds the amounts which includes the discount and the delivery amount
+var checkout = document.getElementById("checkout").innerHTML = "If you're happy with that, please go ahead and place the order. Have an awesome day!</em>"; //grabs the checkout id and adds a message
+var deliveryAmount = document.getElementById("deliveryCost").innerHTML = "Your delivery charge is £" + deliveryAmount.toFixed(2); //grabs the id where the delivery cost will be displayed and adds to the html
+}
+
+if (dropDown === 'reg') {
+var discount = total*regCustomer;
+var customerStatus = document.getElementById("customerStatus").innerHTML = "";
+var discountTotal = document.getElementById("totalcost").innerHTML = "your discount is £" + discount.toFixed(2) +  " The total cost is: £" + (total - discount + deliveryAmount).toFixed(2);
+var checkout = document.getElementById("checkout").innerHTML = "If you're happy with that, please go ahead and place the order. Have an awesome day!</em>";
+var deliveryAmount = document.getElementById("deliveryCost").innerHTML = "Your delivery charge is £" + deliveryAmount.toFixed(2);
+}
+
+if (dropDown === 'trade') {
+var discount = total*tradeCustomer;
+var customerStatus = document.getElementById("customerStatus").innerHTML = "";
+var discountTotal = document.getElementById("totalcost").innerHTML = "your discount is £" + discount.toFixed(2) +  " The total cost is: £" + (total - discount + deliveryAmount).toFixed(2);
+var checkout = document.getElementById("checkout").innerHTML = "If you're happy with that, please go ahead and place the order. Have an awesome day!</em>";
+var deliveryAmount = document.getElementById("deliveryCost").innerHTML = "Your delivery charge is £" + deliveryAmount.toFixed(2);
+}
+
+//extra validation
+
+if(shirtQuantity.value == 1){
+results1.innerHTML = "* " + shirtQuantity.value + " shirt is @ £20. subtotal: £" + subTotal1 + "<br>"; //if quantity is 1 the wording in the results changes
+}
+
+if(tieQuantity.value == 1){
+results2.innerHTML = "* " + tieQuantity.value + " tie is @ £12. subtotal: £" + subTotal2 + "<br>";
+}
+
+if(shirtQuantity.value == 0){
+results1.innerHTML = "* no shirts purchased" + "<br>"; //if the quantity is 0 the subtotal won't be calculated
+}
+
+if(tieQuantity.value == 0){
+results2.innerHTML = "* no ties purchased" + "<br>";
+}
+
+}
+
+}
+
+
+
+
+
+
+	
+
+</script>
+</body>
+</html>
