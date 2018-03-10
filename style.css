@@ -292,3 +292,30 @@ header nav ul li a {
 	opacity: 1;
 }
 
+/* footer */
+
+footer {
+	background: #E0E0E0;
+	height: 100%;
+	padding: 10px;
+}
+
+.social ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-self: center;
+	grid-gap: 10px;
+}
+
+.social ul li {
+	list-style-type: none;
+}
+
+.social .linkedin {
+	justify-self: end;
+}
+
+footer p {
+	text-align: center;
+}
+
