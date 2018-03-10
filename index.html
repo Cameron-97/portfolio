@@ -103,5 +103,14 @@
 
 <!-- end of footer-->
 
+<script>
+   document.getElementById("confirm").addEventListener("click", function(e){
+        if( ! confirm("Do you want to navigate away from this page?") ){
+            e.preventDefault();
+        } 
+    });
+			
+</script>
+
 </body>
 </html>
