@@ -211,3 +211,84 @@ header nav ul li a {
   transform: scale(1.025);
 }
 
+/* past work */
+
+.past-work {
+	margin-top: 25px;
+	background: #26A69A;
+	padding-bottom: 20px;
+}
+
+.past-work h2 {
+	text-align: center;
+	padding: 20px 0;
+	color: #fff;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+}
+
+.showcase {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: minmax(300px, auto);
+	grid-gap: 10px;
+}
+
+.showcase > * {
+	border: 1px solid #26A69A;
+	box-shadow: 2px 2px #80CBC4;
+}
+
+
+.showcase div {
+	color: #000;
+	font-weight: bold;
+	height: 100%;
+	justify-content: center;
+	align-content: center;
+	display: grid;
+	font-size: 1.15rem;
+}
+
+.one {
+	background: url(images/pub-menu.jpg) no-repeat;
+	background-size: cover;
+	opacity: .8;
+}
+
+.two {
+	background: url(images/wsd.jpg) no-repeat center;
+	background-size: cover;
+	opacity: .8;
+}
+
+.three {
+	background: url(images/encryptor.jpg) no-repeat center;
+	background-size: cover;
+	opacity: .8;
+}
+
+.four {
+	background: url(images/made.jpg) no-repeat center;
+	background-size: cover;
+	opacity: .8;
+}
+
+.five {
+	background: url(images/order.jpg) no-repeat center;
+	background-size: cover;
+	opacity: .8;
+}
+
+.six {
+	background: url(images/calc.jpg) no-repeat center;
+	background-size: cover;
+	opacity: .8;
+}
+
+.one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover {
+	transition: all 300ms linear;
+	transform:scale(1.1);
+	opacity: 1;
+}
+
