@@ -373,3 +373,132 @@ footer p {
 	cursor: pointer;
 }
 
+/* blog posts */
+
+.blog-posts {
+	background: #C5E1A5;
+	margin-top: 10px;
+	height: 200px;
+}
+
+.blog-posts h3 {
+	border-bottom: 2px solid #00AE68;
+	width: 95px;
+	padding-top: 15px;
+}
+
+.blog-posts p {
+	line-height: 1.5;
+	font-weight: 500;
+	font-size: 1.3rem;
+	padding-top: 10px;
+}
+
+.blogs {
+	margin: 20px 0 30px 0;
+}
+
+.blogs ul {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: minmax(150px, auto);
+	grid-column-gap: 15px;
+	grid-row-gap: 30px;
+}
+
+.blogs ul li {
+	list-style-type: none;
+	padding: 20px;
+	border: 1px solid #80CBC4;
+	box-shadow: 2px 2px #80CBC4;
+	border-radius: 10px;
+	display: grid;
+}
+
+.blogs ul li h3 {
+	font-weight: 700;
+	font-size: 1.4rem;
+}
+
+.blogs ul li h4 {
+	padding: 15px 0 10px 0;
+	font-size: 1.25rem;
+}
+
+.blogs ul li p {
+	line-height: 1.7rem;
+	font-size: 1.1rem;
+}
+
+.blogs ul li .btn-container {
+	align-self: end;
+	padding-bottom: 10px;
+}
+
+.blogs ul li .btn-container a {
+	color: #fff;
+	padding: 10px 10px;
+	text-transform: uppercase;
+	text-align: center;
+	background: #4DB6AC;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.blogs ul li .btn-container a:hover {
+	background: #80CBC4;
+	transition: all ease-in-out 500ms;
+}
+
+.blogs ul li .btn-container a:active{
+  transform: scale(1.025);
+}
+
+/* expanded blogs */
+.expanded-blogs {
+	padding: 15px 0;
+}
+
+.expanded-blogs .wrapper {
+	max-width: 40%;
+	box-shadow: 2px 2px 2px 2px grey;
+	border-radius: 15px;
+	background: #fff;
+}
+
+.expanded-blogs h3 {
+	padding: 25px 0;
+	font-size: 1.45rem;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.expanded-blogs p {
+	padding-bottom: 15px;
+	line-height: 1.7rem;
+	font-size: 1.125rem;
+}
+
+.expanded-blogs h4 {
+	padding-bottom: 10px;
+	font-size: 1.3rem;
+}
+
+.expanded-blogs a {
+	color: blue;
+	text-decoration: underline;
+}
+
+.expanded-blogs li {
+	list-style-type: none;
+	padding-bottom: 10px;
+}
+
+.expanded-blogs img {
+	max-width: 100%;
+	padding-bottom: 15px;
+	margin: 0 auto;
+	display: block;
+}
+
